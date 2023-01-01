@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D48F3EF0296237230074DDC1 /* TasksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48F3EEF296237230074DDC1 /* TasksApp.swift */; };
+		D48F3EF0296237230074DDC1 /* AppMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48F3EEF296237230074DDC1 /* AppMain.swift */; };
 		D48F3EF2296237230074DDC1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48F3EF1296237230074DDC1 /* ContentView.swift */; };
 		D48F3EF4296237240074DDC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D48F3EF3296237240074DDC1 /* Assets.xcassets */; };
 		D48F3EF7296237240074DDC1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D48F3EF6296237240074DDC1 /* Preview Assets.xcassets */; };
 		D48F3F01296237250074DDC1 /* TasksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48F3F00296237250074DDC1 /* TasksTests.swift */; };
 		D48F3F0B296237250074DDC1 /* TasksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48F3F0A296237250074DDC1 /* TasksUITests.swift */; };
 		D48F3F0D296237250074DDC1 /* TasksUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48F3F0C296237250074DDC1 /* TasksUITestsLaunchTests.swift */; };
+		D48F3F1A296238340074DDC1 /* TasksService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48F3F19296238340074DDC1 /* TasksService.swift */; };
+		D48F3F1D296238540074DDC1 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48F3F1C296238540074DDC1 /* Models.swift */; };
+		D48F3F1F2962385A0074DDC1 /* MockedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48F3F1E2962385A0074DDC1 /* MockedData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +38,7 @@
 
 /* Begin PBXFileReference section */
 		D48F3EEC296237230074DDC1 /* Tasks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tasks.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D48F3EEF296237230074DDC1 /* TasksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksApp.swift; sourceTree = "<group>"; };
+		D48F3EEF296237230074DDC1 /* AppMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMain.swift; sourceTree = "<group>"; };
 		D48F3EF1296237230074DDC1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D48F3EF3296237240074DDC1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D48F3EF6296237240074DDC1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -44,6 +47,9 @@
 		D48F3F06296237250074DDC1 /* TasksUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TasksUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D48F3F0A296237250074DDC1 /* TasksUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksUITests.swift; sourceTree = "<group>"; };
 		D48F3F0C296237250074DDC1 /* TasksUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D48F3F19296238340074DDC1 /* TasksService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksService.swift; sourceTree = "<group>"; };
+		D48F3F1C296238540074DDC1 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		D48F3F1E2962385A0074DDC1 /* MockedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +100,10 @@
 		D48F3EEE296237230074DDC1 /* Tasks */ = {
 			isa = PBXGroup;
 			children = (
-				D48F3EEF296237230074DDC1 /* TasksApp.swift */,
-				D48F3EF1296237230074DDC1 /* ContentView.swift */,
+				D48F3F212962387C0074DDC1 /* System */,
+				D48F3F20296238740074DDC1 /* Services */,
+				D48F3F1B2962384A0074DDC1 /* Models */,
+				D48F3F22296238880074DDC1 /* UI */,
 				D48F3EF3296237240074DDC1 /* Assets.xcassets */,
 				D48F3EF5296237240074DDC1 /* Preview Content */,
 			);
@@ -125,6 +133,39 @@
 				D48F3F0C296237250074DDC1 /* TasksUITestsLaunchTests.swift */,
 			);
 			path = TasksUITests;
+			sourceTree = "<group>";
+		};
+		D48F3F1B2962384A0074DDC1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D48F3F1C296238540074DDC1 /* Models.swift */,
+				D48F3F1E2962385A0074DDC1 /* MockedData.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D48F3F20296238740074DDC1 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D48F3F19296238340074DDC1 /* TasksService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		D48F3F212962387C0074DDC1 /* System */ = {
+			isa = PBXGroup;
+			children = (
+				D48F3EEF296237230074DDC1 /* AppMain.swift */,
+			);
+			path = System;
+			sourceTree = "<group>";
+		};
+		D48F3F22296238880074DDC1 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				D48F3EF1296237230074DDC1 /* ContentView.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +298,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D48F3F1F2962385A0074DDC1 /* MockedData.swift in Sources */,
 				D48F3EF2296237230074DDC1 /* ContentView.swift in Sources */,
-				D48F3EF0296237230074DDC1 /* TasksApp.swift in Sources */,
+				D48F3F1A296238340074DDC1 /* TasksService.swift in Sources */,
+				D48F3EF0296237230074DDC1 /* AppMain.swift in Sources */,
+				D48F3F1D296238540074DDC1 /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
